@@ -7,11 +7,7 @@ int	print_string(char *str)
 	count = 0;
 	if (!str)
 		str = "(null)";
-	while (*str)
-	{
-		ft_putchar_fd(*str, 1);
-		str++;
-		count++;
-	}
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
 	return (count);
 }
