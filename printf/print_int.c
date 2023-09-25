@@ -7,6 +7,8 @@ int	print_int(int n)
 
 	count = 0;
 	temp = n;
+	if (temp < 0)
+		count++;
 	while (temp)
 	{
 		temp /= 10;
