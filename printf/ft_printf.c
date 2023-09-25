@@ -23,16 +23,37 @@ int	ft_printf(const char *str, ...)
 	// 	return (-1);
 	return (count);
 }
-/*
+
 #include <stdio.h>
 int main(void)
 {
-	char *name = "Boldi";
-	int age = 21;
-	int my_ret = ft_printf("(ft_printf) Hi, my name is %s, and I'm %d years old.\n", name, age);
-	int ret = printf("(printf)    Hi, my name is %s, and I'm %d years old.\n", name, age);
+	char *str = "This is";
+	int num = -42;
+	int my_ret = ft_printf("(ft_printf) |%s %d Vienna|\n", str, num);
+	int ret = printf("(printf)    |%s %d Vienna|\n", str, num);
 	printf("ft_printf return: %d\n", my_ret);
-	printf("   printf return: %d\n", ret);
+	printf("   printf return: %d\n\n", ret);
+
+	ft_printf("(ft_printf) |%06d|\n", num);
+	printf("(printf)    |%06d|\n\n", num);
+
+	ft_printf("(ft_printf) |%-6d|\n", num);
+	printf("(printf)    |%-6d|\n\n", num);
+
+	ft_printf("(ft_printf) |%6d|\n", num);
+	printf("(printf)    |%6d|\n\n", num);
+
+	ft_printf("(ft_printf) |%.4s|\n", str);
+	printf("(printf)    |%.4s|\n\n", str);
+
+	ft_printf("(ft_printf) |%#x|\n", num);
+	printf("(printf)    |%#x|\n\n", num);
+
+	ft_printf("(ft_printf) |% d|\n", num);
+	printf("(printf)    |% d|\n\n", num);
+
+	ft_printf("(ft_printf) |%+6d|\n", num);
+	printf("(printf)    |%+6d|\n\n", num);
+
 	return (0);
 }
-*/
