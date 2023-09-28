@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../ft_printf.h"
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		count;
 	va_list	arg_ptr;
@@ -35,6 +35,7 @@ int ft_printf(const char *str, ...)
 	va_end(arg_ptr);
 	return (count);
 }
+
 /*
 #include <stdio.h>
 int main(void)
@@ -44,8 +45,10 @@ int main(void)
 	int num2 = -2147483648;
 
 	ft_printf("\n------------ %%s %%d ... %%c %%i\n");
-	int my_ret1 = ft_printf("|%s %d Vienna %c %i|\tft_printf\n", str, num, 'a', 123);
-	int ret1 = printf("|%s %d Vienna %c %i|\tprintf\n", str, num, 'a', 123);
+	int my_ret1 = 
+		ft_printf("|%s %d Vienna %c %i|\tft_printf\n", str, num, 'a', 123);
+	int ret1 = 
+		printf("|%s %d Vienna %c %i|\tprintf\n", str, num, 'a', 123);
 	printf("return: %d\t\t\tft_printf\n", my_ret1);
 	printf("return: %d\t\t\tprintf\n\n", ret1);
 

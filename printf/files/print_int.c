@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   print_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bszabo <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 13:16:31 by bszabo            #+#    #+#             */
-/*   Updated: 2023/09/27 13:16:34 by bszabo           ###   ########.fr       */
+/*   Created: 2023/09/28 13:39:00 by bszabo            #+#    #+#             */
+/*   Updated: 2023/09/28 13:39:23 by bszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "../ft_printf.h"
 
-#include <stdarg.h>
-#include "libft/libft.h"
+int	print_int(int n)
+{
+	int	count;
 
-int	ft_printf(const char *str, ...);
-int	handle_percent(const char **str, va_list arg_ptr);
-int	print_char(int c);
-int	print_int(int n);
-int	print_str(char *str);
-int	print_hex(unsigned long long n, char c);
-int	print_ptr(void *ptr);
-
-#endif
+	ft_putnbr_fd(n, 1);
+	count = 0;
+	if (n == -2147483648)
+		return (11);
+	else if (n < 0)
+	{
+		n *= -1;
+		count++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
