@@ -18,7 +18,9 @@ int	print_int(int n)
 
 	ft_putnbr_fd(n, 1);
 	count = 0;
-	if (n == -2147483648)
+	if (n == 0)
+		return (1);
+	else if (n == -2147483648)
 		return (11);
 	else if (n < 0)
 	{
