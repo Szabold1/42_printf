@@ -2,18 +2,21 @@
 
 int	print_int(int n)
 {
-	int	temp;
 	int	count;
 
+	ft_putnbr_fd(n, 1);
 	count = 0;
-	temp = n;
-	if (temp < 0)
-		count++;
-	while (temp)
+	if (n == -2147483648)
+		return (11);
+	else if (n < 0)
 	{
-		temp /= 10;
+		n *= -1;
 		count++;
 	}
-	ft_putnbr_fd(n, 1);
+	while (n > 0)
+	{
+		n /= 10;
+		count++;
+	}
 	return (count);
 }

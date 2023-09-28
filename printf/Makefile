@@ -2,7 +2,7 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft
-SRC = ft_printf.c handle_percent.c print_char.c print_int.c print_string.c
+SRC = ft_printf.c print_hex.c print_ptr.c handle_percent.c print_char.c print_int.c print_string.c 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
