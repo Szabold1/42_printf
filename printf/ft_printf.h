@@ -13,8 +13,8 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include "libft/libft.h"
 
 int	ft_printf(const char *str, ...);
 int	handle_percent(const char **str, va_list arg_ptr);
@@ -23,5 +23,6 @@ int	print_int(int n);
 int	print_str(char *str);
 int	print_hex(unsigned long long n, char c);
 int	print_ptr(void *ptr);
+int	print_uint(unsigned int n);
 
 #endif

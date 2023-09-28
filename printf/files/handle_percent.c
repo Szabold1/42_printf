@@ -28,10 +28,8 @@ int	handle_percent(const char **str, va_list arg_ptr)
 		count += print_ptr(va_arg(arg_ptr, void *));
 	else if (**str == 'd' || **str == 'i')
 		count += print_int(va_arg(arg_ptr, int));
-		/*
 	else if (**str == 'u')
 		count += print_uint(va_arg(arg_ptr, int));
-		*/
 	else if (**str == 'x' || **str == 'X')
 		count += print_hex(va_arg(arg_ptr, unsigned int), **str);
 	else if (**str == '%')
