@@ -25,8 +25,7 @@ int	print_uint(unsigned int n)
 	else
 	{
 		count += print_uint(n / 10);
-		ft_putchar_fd(n % 10 + 48, 1);
-		count++;
+		count += print_uint(n % 10);
 	}
 	return (count);
 }
