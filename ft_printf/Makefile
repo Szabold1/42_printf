@@ -1,41 +1,27 @@
-NAME = libftprintf.a
-LIBFT = ./libft/libft.a
-LIBFT_DIR = ./libft
+NAME = ft_printf.a
 SRC_DIR = ./src
 SRC = ft_printf.c \
-		handle_percent.c \
-		print_char.c \
-		print_hex.c \
-		print_int.c \
-		print_ptr.c \
-		print_str.c \
-		print_uint.c
+		ft_printf_utils.c \
+		ft_printf_utils2.c
 OBJS = $(SRC:%.c=$(SRC_DIR)/%.o)
 CC = cc
 AR = ar rcs
 RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
-CP = cp
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CP) $(LIBFT) $(NAME)
-	@$(AR) $(NAME) $(OBJS)
-
-$(LIBFT): $(LIBFT_DIR)
-	@$(MAKE) -C $(LIBFT_DIR)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(MAKE) clean -C $(LIBFT_DIR)
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(MAKE) fclean -C $(LIBFT_DIR)
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

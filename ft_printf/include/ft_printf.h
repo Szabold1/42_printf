@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bszabo <bszabo@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 11:45:03 by bszabo            #+#    #+#             */
-/*   Updated: 2023/09/05 11:47:50 by bszabo           ###   ########.fr       */
+/*   Created: 2023/09/28 13:35:33 by bszabo            #+#    #+#             */
+/*   Updated: 2023/09/28 13:35:42 by bszabo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-// return the length of string 'str'
-size_t	ft_strlen(const char *str)
-{
-	int	i;
+# include <stdarg.h>
+# include <unistd.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char test[] = "This is 11!";
-	int result = ft_strlen(test);
-	printf("%s (number of characters: %d)\n", test, result);
-	return (0);
-}
-*/
+// FILE: ft_printf.c
+int	ft_printf(const char *str, ...);
+
+// FILE: ft_printf_utils.c
+int	print_char(int c);
+int	print_str(char *str);
+int	print_int(int n);
+int	print_uint(unsigned int n);
+
+// FILE: ft_printf_utils2.c
+int	print_hex(unsigned long long n, char c);
+int	print_ptr(void *ptr);
+
+#endif
